@@ -1,6 +1,12 @@
-# Carbon MCP - issue tracking
+# Carbon MCP - usage guidance and issue tracking
 
-This repository is being used for a way that internal and external IBMer's can create and track issues for Carbon MCP. 
+This repository offers usage guidance and serves as the central place to report issues and request new features for Carbon MCP. 
+
+Visit the Carbon MCP wiki to get started and explore key concepts:
+
+- [Overview](01.-Overview): MCP overview, Carbon MCP tools and content coverage
+- [Onboarding and setup](02.-Onboarding-and-setup): Getting authentication credentials and connecting to common MCP clients
+- [Prompts](03.-Prompts): Prompting guidance and examples
 
 <img
   src="public/carbon-mcp.svg"
@@ -13,6 +19,8 @@ This repository is being used for a way that internal and external IBMer's can c
 MCP (Model Context Protocol) is an open-source standard that enables AI agents or AI applications to securely connect with external tools, data sources, and workflows through a unified integration layer.
 
 ## Why Carbon MCP?
+
+➤ **Carbon MCP makes any agentic AI application an instant expert in the Carbon Design System, enabling teams to deliver consistent, high‑quality user experiences with greater speed.**
 
 - _Instant AI Access to Carbon Design Standards_:
 Carbon MCP lets AI applications or agents directly query the Carbon design system for pertinent context (e.g. colors, typography, component source, usage guidelines, etc.).
