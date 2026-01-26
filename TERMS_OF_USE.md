@@ -57,8 +57,6 @@ When telemetry is enabled, Carbon MCP collects limited, de-identified and anonym
 
 Telemetry **does not include** plain-text emails, credentials, documents, or user content beyond the metadata required for metrics.
 
----
-
 ### 4.2 Opting out of IBM Telemetry data collection
 
 You may opt out of telemetry collection at any time by sending a request to Carbon.MCP@ibm.com:
@@ -72,18 +70,30 @@ Once processed:
 - No further usage events (queries, auth, or performance metrics) will be logged for your identity.
 - To re-enable telemetry, contact the Carbon MCP administrator or request reinstatement via the MCP management interface.
 
+---
+
 ## 5. Termination
+
 IBM may suspend or terminate your access to the hosted Carbon MCP Service at any time for operational, compliance, or security reasons, or if you violate these Terms.
 
+---
+
 ## 6. Disclaimer of Warranty
+
 The hosted Carbon MCP Service is provided on an “AS IS” and “AS AVAILABLE” basis.
 IBM makes no warranties, express or implied, regarding availability, performance, or fitness for a particular purpose.
 The open-source Carbon MCP codebase is separately licensed under the Apache License 2.0 and provided without warranty as described in that license.
 
+---
+
 ## 7. Limitation of Liability
+
 To the maximum extent permitted by law, IBM shall not be liable for any indirect, incidental, consequential, or special damages arising out of or in connection with your use of the hosted Carbon MCP Service.
 
+---
+
 ## 8. Modifications
+
 IBM may update these Terms periodically to reflect changes in policy or functionality.
 Updated Terms will be posted in this repository. Your continued use of the Service after updates constitutes acceptance of the revised Terms.
 
