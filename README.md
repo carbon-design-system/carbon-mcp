@@ -1,4 +1,6 @@
-# Carbon MCP
+# Carbon MCP - issue tracking
+
+This repository is being used for a way that internal and external IBMer's can create and track issues for Carbon MCP. 
 
 <img
   src="public/carbon-mcp.svg"
