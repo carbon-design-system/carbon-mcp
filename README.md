@@ -7,7 +7,6 @@ Visit the Carbon MCP wiki to get started and explore key concepts:
 - [Overview](01.-Overview): MCP overview, Carbon MCP tools and content coverage
 - [Onboarding and setup](02.-Onboarding-and-setup): Getting authentication credentials and connecting to common MCP clients
 - [Prompts](03.-Prompts): Prompting guidance and examples
-
 <br />
 <img
   src="public/carbon-mcp.svg"
