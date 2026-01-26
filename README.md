@@ -20,3 +20,46 @@ Code examples and documentation exposed via Carbon MCP allows AI tools to genera
 
 - _Improved Consistency_:
 AI tools that integrate Carbon MCP gives designers, developers, and PMs consistent answers and examples from a shared source of truth, helping reduce drift and rework.
+
+## Summary of Carbon MCP Coverage
+
+Carbon MCP continues to evolve. Current coverage is provided below:
+
+#### ✅ `@carbon/react`
+- Code examples and documentation
+- Example: Button, Tabs, TextInput, etc.
+- Multiple variants per component
+- Complete props and imports
+
+#### ✅ `@carbon/web-components`
+- Code examples and documentation
+- Example: button, tabs, text-input, etc.
+- Multiple variants per component
+- Complete props and imports
+
+#### ✅ Carbon for IBM Products
+- Code examples and documentation
+- Example: Tearsheets, PageHeader, etc.
+- Multiple variants per component
+- Complete props and imports
+
+#### ✅ Carbon Icons and Pictograms
+- Code examples and documentation
+- Example: Settings, User, UserAvatarFilled, etc.
+- Usage
+
+#### ✅ `@carbon/ai-chat`
+- Code examples and documentation
+- Example: basic, custom-element, history, etc.
+- Full code examples
+- Complete props and imports
+
+#### 🟨 `@carbon/charts` (Documentation only)
+- Chart type descriptions
+- Links to demos
+- No detailed code examples
+
+#### ⛔ Support coming soon!
+- Carbon Labs
+- Carbon TanStack
+- Carbon Patterns
