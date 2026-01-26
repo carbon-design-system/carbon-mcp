@@ -8,6 +8,7 @@ Visit the Carbon MCP wiki to get started and explore key concepts:
 - [Onboarding and setup](02.-Onboarding-and-setup): Getting authentication credentials and connecting to common MCP clients
 - [Prompts](03.-Prompts): Prompting guidance and examples
 
+<br />
 <img
   src="public/carbon-mcp.svg"
   alt="Carbon MCP GitHub banner showing tagline about AI expertise in Carbon"
@@ -18,7 +19,7 @@ Visit the Carbon MCP wiki to get started and explore key concepts:
 
 MCP (Model Context Protocol) is an open-source standard that enables AI agents or AI applications to securely connect with external tools, data sources, and workflows through a unified integration layer.
 
-## Why Carbon MCP?
+## Carbon MCP
 
 ➤ **Carbon MCP makes any agentic AI application an instant expert in the Carbon Design System, enabling teams to deliver consistent, high‑quality user experiences with greater speed.**
 
