@@ -4,8 +4,14 @@ tabs: ['Overview', 'Onboarding and setup', 'Prompts']
 description: Connecting your AI application to Carbon MCP
 ---
 
-import { Accordion, AccordionItem, UnorderedList, ListItem } from '@carbon/react';
-import { ClientSupportTable } from '../components/ClientSupportTable';
+import {
+  Accordion,
+  AccordionItem,
+  UnorderedList,
+  ListItem,
+  Link,
+} from "@carbon/react";
+import { ClientSupportTable } from "../components/ClientSupportTable";
 
 # Follow these steps to configure your AI application or AI agent to use Carbon MCP.
 
@@ -29,9 +35,7 @@ authentication credentials, which can be provided to your MCP client.
 
 <br />
 
-<a
-  href="https://mcp.carbondesignsystem.com/mcp/auth/ibmid/web"
-  target="_blank">
+<a href="https://mcp.carbondesignsystem.com/mcp/auth/ibmid/web" target="_blank">
   Visit this link to generate your token and session ID
 </a>
 
@@ -42,7 +46,10 @@ After clicking the link above:
 <UnorderedList>
   <ListItem>Login to IBM Cloud</ListItem>
   <ListItem>Complete the brief request form</ListItem>
-  <ListItem>Once your access request has been approved, you will receive an email to activate your credentials</ListItem>
+  <ListItem>
+    Once your access request has been approved, you will receive an email to
+    activate your credentials
+  </ListItem>
 </UnorderedList>
 
 You will then be provided with your authentication credentials, as shown below.
@@ -606,18 +613,45 @@ correctness**, and deliver precise, efficient Carbon code and guidance.
 
 **Claude Code and Claude Desktop**
 
-Add a `systemPrompt` field to your Carbon MCP server
-[Claude Code configuration](#claude-code) and
-[Claude Desktop configuration](#claude-desktop). Insert it anywhere within the
-carbon-mcp object (recommended placement is after the url field for
-readability).
+Add a `systemPrompt` field to your Carbon MCP server <Link inline href="#step-3-connecting-to-common-mcp-clients" onClick={(e) => {
+e.preventDefault();
+// activate the onboarding tab if needed
+document
+.getElementById("step-3-connecting-to-common-mcp-clients")
+?.scrollIntoView({ behavior: "smooth" });
+}}>Claude Code configuration</Link> and <Link
+inline
+href="#step-3-connecting-to-common-mcp-clients"
+onClick={(e) => {
+e.preventDefault();
+// activate the onboarding tab if needed
+document
+.getElementById("step-3-connecting-to-common-mcp-clients")
+?.scrollIntoView({ behavior: "smooth" });
+}}>Claude Desktop configuration</Link>
+. Insert it anywhere within the carbon-mcp object (recommended placement is
+after the url field for readability).
 
 ```markdown
-{ "mcpServers": { "carbon-mcp": { "type": "streamable-http", "url":
-"https://mcp.carbondesignsystem.com/mcp", "systemPrompt":
-"<CARBON_MCP_SYSTEM_PROMPT>", "disabled": false, "timeout": 600, "headers": {
-"Authorization": "Bearer <TOKEN>", "X-MCP-Session": "<SESSION>" },
-"alwaysAllow": ["code_search", "docs_search"] } } }
+{
+  "mcpServers": {
+    "carbon-mcp": {
+      "type": "streamable-http",
+      "url": "https://mcp.carbondesignsystem.com/mcp",
+      "systemPrompt": "<CARBON_MCP_SYSTEM_PROMPT>",
+      "disabled": false,
+      "timeout": 600,
+      "headers": {
+        "Authorization": "Bearer <TOKEN>",
+        "X-MCP-Session": "<SESSION>"
+      },
+      "alwaysAllow": [
+        "code_search",
+        "docs_search"
+      ]
+    }
+  }
+}
 ```
 
 <br />
@@ -646,6 +680,21 @@ Add Carbon MCP system prompt to Cursor:
   <ListItem>Click Settings</ListItem>
   <ListItem>Click Rules and Memories</ListItem>
   <ListItem>Scroll in the dialogue to User Rules and Click Add Rule</ListItem>
-  <ListItem>Paste the [Carbon MCP system prompt](#carbon-mcp-client-system-prompt) into the `Workspace Rules` editor</ListItem>
-  <ListItem>Save the rule to apply it as a system prompt for the workspace</ListItem>
+  <ListItem>
+    Paste the <Link
+      inline
+      href="#carbon-mcp-client-system-prompt"
+      onClick={(e) => {
+        e.preventDefault();
+        // activate the onboarding tab if needed
+        document
+          .getElementById("carbon-mcp-client-system-prompt")
+          ?.scrollIntoView({ behavior: "smooth" });
+      }}>
+      Carbon MCP system prompt
+    </Link>into the `Workspace Rules` editor
+  </ListItem>
+  <ListItem>
+    Save the rule to apply it as a system prompt for the workspace
+  </ListItem>
 </UnorderedList>
