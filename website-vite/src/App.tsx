@@ -109,6 +109,7 @@ function Shell() {
             onClick={() =>
               window.open("https://github.com/carbon-design-system/carbon-mcp/issues/new?template=REQUEST_SUPPORT.yaml", "_blank")
             }
+            tooltipAlignment="end"
           >
             <Help size={20} />
           </HeaderGlobalAction>
