@@ -1,0 +1,77 @@
+# .github/ISSUE_TEMPLATE/PROVIDE_FEEDBACK.yaml
+name: Provide feedback 📝
+description: Share feedback to help improve Carbon MCP
+title: '[Feedback]: '
+type: 'feedback'
+body:
+  - type: markdown
+    attributes:
+      value: '## Welcome!'
+  - type: markdown
+    attributes:
+      value:
+        Use this template to share product feedback, usability notes, or ideas related to Carbon MCP.
+  - type: dropdown
+    id: ibmer
+    attributes:
+      label: Are you an IBMer?
+      options:
+        - 'No'
+        - 'Yes'
+  - type: markdown
+    attributes:
+      value: 'You may also reach out directly via our internal Slack channel at #carbon-design-system.'
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: Feedback type
+      options:
+        - 'Usability'
+        - 'Documentation'
+        - 'Performance'
+        - 'Quality / relevance of results'
+        - 'Onboarding'
+        - 'Other'
+    validations:
+      required: true
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Feedback
+      description: What feedback would you like to share?
+      placeholder: Describe what you liked, what didn't work well, or what could be improved.
+    validations:
+      required: true
+  - type: textarea
+    id: client
+    attributes:
+      label: MCP client / AI application
+      description: If applicable, what MCP client or AI application were you using?
+      placeholder: Enter the MCP client or AI application name.
+  - type: textarea
+    id: prompt
+    attributes:
+      label: AI prompt
+      description: If applicable, share the prompt you used.
+      placeholder: Enter the AI prompt used.
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples / screenshots
+      description: Attach screenshots or provide examples. Please redact secrets.
+      placeholder: Add links, screenshots, or short examples.
+  - type: input
+    id: application
+    attributes:
+      label: Application / product
+      description: What application, product, or Carbon local system do you work on?
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: Please confirm the following
+      options:
+        - label:
+            I agree to follow this project's [Code of Conduct](./.github/CODE_OF_CONDUCT.md)
+          required: true
+
