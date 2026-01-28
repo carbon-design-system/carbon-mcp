@@ -1,0 +1,29 @@
+/* Carbon v11 */
+@import "@carbon/styles/css/styles.css";
+
+/* IBM Plex */
+@import "@ibm/plex/css/ibm-plex.css";
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Ensure smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Adjust scroll position to account for fixed header */
+:target {
+  scroll-margin-top: 4rem;
+}

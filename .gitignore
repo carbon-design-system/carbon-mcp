@@ -1,0 +1,56 @@
+############################################
+# OS / Editor
+############################################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+############################################
+# Node / npm
+############################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+############################################
+# Vite / build output
+############################################
+website-vite/node_modules/
+website-vite/dist/
+website-vite/.vite/
+
+############################################
+# TypeScript
+############################################
+*.tsbuildinfo
+
+############################################
+# Environment files
+############################################
+.env
+.env.local
+.env.*.local
+
+############################################
+# GitHub Pages artifacts
+############################################
+*.log
+
+############################################
+# Large / non-versioned assets
+# (videos should not be committed)
+############################################
+website-vite/public/videos/*.mp4
+website-vite/public/videos/*.mov
+website-vite/public/videos/*.webm
+
+############################################
+# Temporary / scratch
+############################################
+.tmp/
+tmp/
