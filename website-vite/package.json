@@ -1,0 +1,33 @@
+{
+  "name": "carbon-mcp-external-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@carbon/colors": "^11.45.0",
+    "@carbon/icons-react": "^11.73.0",
+    "@carbon/react": "^1.99.0",
+    "@carbon/styles": "^1.98.0",
+    "@ibm/plex": "^6.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.3"
+  },
+  "devDependencies": {
+    "@mdx-js/rollup": "^3.1.1",
+    "@types/react": "^18.3.27",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "remark-frontmatter": "^5.0.0",
+    "remark-mdx-frontmatter": "^5.2.0",
+    "typescript": "^5.9.3",
+    "vite": "^5.4.21"
+  }
+}
+
+

@@ -1,0 +1,220 @@
+@use '@carbon/styles/scss/themes' as *;
+@use '@carbon/styles/scss/theme' as * with ($theme: $g10);
+@use '@carbon/styles';
+@use '@carbon/styles/scss/spacing' as *;
+@use '@carbon/styles/scss/type' as *;
+
+// Utility classes for layout spacing
+.page-content {
+  padding: $spacing-07;
+  max-width: 1056px;
+}
+
+.page-section {
+  margin-block-end: $spacing-07;
+}
+
+.anchor-links-container {
+  margin-block: $spacing-05 $spacing-07;
+}
+
+.anchor-links-list {
+  margin: 0;
+  padding-inline-start: $spacing-05;
+  list-style: disc;
+}
+
+.anchor-link-item {
+  @include type-style('body-01');
+  margin-block-end: $spacing-03;
+  
+  a {
+    color: $link-primary;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+      color: $link-primary-hover;
+    }
+    
+    &:visited {
+      color: $link-visited;
+    }
+  }
+}
+
+.page-description {
+  @include type-style('heading-04');
+  margin-block-end: $spacing-06;
+  max-width: 900px;
+  color: $text-secondary;
+}
+
+// Typography styles for MDX content
+.mdx-content {
+  h1 {
+    @include type-style('heading-05');
+    margin-block-end: $spacing-06;
+    color: $text-primary;
+  }
+  
+  h2 {
+    @include type-style('heading-04');
+    margin-block: $spacing-07 $spacing-05;
+    color: $text-primary;
+  }
+  
+  h3 {
+    @include type-style('heading-03');
+    margin-block: $spacing-06 $spacing-04;
+    color: $text-primary;
+  }
+  
+  h4 {
+    @include type-style('heading-02');
+    margin-block: $spacing-05 $spacing-03;
+    color: $text-primary;
+  }
+  
+  p {
+    @include type-style('body-01');
+    margin-block-end: $spacing-05;
+    color: $text-primary;
+  }
+  
+  ul, ol {
+    @include type-style('body-01');
+    margin-block-end: $spacing-05;
+    padding-inline-start: $spacing-06;
+    color: $text-primary;
+    
+    li {
+      margin-block-end: $spacing-03;
+    }
+  }
+  
+  a {
+    color: $link-primary;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+      color: $link-primary-hover;
+    }
+    
+    &:visited {
+      color: $link-visited;
+    }
+  }
+  
+  code {
+    @include type-style('code-01');
+    background-color: $layer-01;
+    padding: 0.125rem 0.25rem;
+    border-radius: 2px;
+  }
+  
+  pre {
+    margin-block-end: $spacing-05;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-block: $spacing-05;
+  }
+  
+  blockquote {
+    @include type-style('body-01');
+    border-inline-start: 4px solid $border-subtle-01;
+    padding-inline-start: $spacing-05;
+    margin-block: $spacing-05;
+    color: $text-secondary;
+  }
+  
+  // InlineNotification spacing in MDX content
+  .cds--inline-notification {
+    margin-block: $spacing-05;
+  }
+}
+
+// Ensure Content component has no bottom padding/margin
+.cds--content {
+  padding-block-end: 0;
+  margin-block-end: 0;
+}
+
+.footer {
+  padding: $spacing-07;
+  margin: 0;
+  background-color: #161616; // Carbon gray-100 for dark background
+  border-block-start: 1px solid #393939; // Subtle border for dark theme
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-03;
+    align-items: center;
+    
+    @media (min-width: 672px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  small {
+    @include type-style('label-01');
+    color: #f4f4f4; // Carbon gray-10 for high contrast on dark background (WCAG AAA)
+  }
+  
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: $spacing-03;
+    
+    a {
+      @include type-style('label-01');
+      color: #78a9ff; // Carbon blue-40 for links on dark background (WCAG AA)
+      text-decoration: none;
+      
+      &:hover {
+        color: #a6c8ff; // Carbon blue-30 for hover state
+        text-decoration: underline;
+      }
+      
+      &:visited {
+        color: #be95ff; // Carbon purple-40 for visited links
+      }
+    }
+    
+    .footer-separator {
+      color: #6f6f6f; // Carbon gray-60 for separator
+    }
+  }
+}
+
+// SideNav styling - add subtle vertical border to match header
+.cds--side-nav {
+  border-inline-end: 1px solid $border-subtle-01;
+}
+
+// Accordion content styling - align code blocks with list bullets
+.cds--accordion__content {
+  pre {
+    margin-inline-start: 0;
+    margin-block-end: $spacing-05;
+    
+    code {
+      display: block;
+    }
+  }
+  
+  // Ensure code blocks after lists align with list content
+  .cds--list + pre,
+  ul + pre,
+  ol + pre {
+    margin-inline-start: 0;
+  }
+}
+
+// Made with Bob
