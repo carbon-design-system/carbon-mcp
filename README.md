@@ -1,6 +1,6 @@
-# Carbon MCP - usage guidance and issue tracking
+# Carbon MCP - issue tracking
 
-This repository offers usage guidance and serves as the central place to report issues and request new features for Carbon MCP. 
+This repository serves as the central place to report issues and request new features for Carbon MCP. 
 
 Visit the Carbon MCP wiki to get started and explore key concepts:
 
