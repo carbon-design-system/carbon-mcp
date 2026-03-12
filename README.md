@@ -65,10 +65,11 @@ Carbon MCP continues to evolve. Current coverage is provided below:
 - Full code examples
 - Complete props and imports
 
-#### 🟨 `@carbon/charts` (Documentation only)
+#### ✅ `@carbon/charts`
 - Chart type descriptions
 - Links to demos
-- No detailed code examples
+- Full code examples
+- Complete props and imports
 
 #### ⛔ Support coming soon!
 - Carbon Labs
