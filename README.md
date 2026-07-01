@@ -71,7 +71,14 @@ Carbon MCP continues to evolve. Current coverage is provided below:
 - Full code examples
 - Complete props and imports
 
+#### ✅ `@carbon-labs/*`
+
+- Code examples and documentation for preview candidates
+  - React - AnimatedHeader, Processing, Resizer, UIShell, and What's New
+- Multiple variants per component
+- Complete props and imports
+
 #### ⛔ Support coming soon!
-- Carbon Labs
+
 - Carbon TanStack
 - Carbon Patterns
