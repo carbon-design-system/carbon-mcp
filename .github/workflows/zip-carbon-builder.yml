@@ -1,0 +1,35 @@
+name: Zip carbon-builder
+
+on:
+  push:
+    paths:
+      - 'public/skills/carbon-builder/**'
+      - '.github/workflows/zip-carbon-builder.yml'
+  workflow_dispatch:
+
+jobs:
+  zip-carbon-builder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create zip archive
+        run: |
+          mkdir -p dist
+          zip -r dist/carbon-builder.zip public/skills/carbon-builder
+
+      - name: Upload zip artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: carbon-builder.zip
+          path: dist/carbon-builder.zip
+
+      - name: Attach zip to GitHub release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/carbon-builder.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
