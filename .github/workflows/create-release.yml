@@ -11,6 +11,17 @@ jobs:
       contents: write
 
     steps:
+      - name: Verify dispatch token
+        env:
+          EXPECTED_TOKEN: ${{ secrets.CARBON_MCP_DISPATCH_TOKEN }}
+          RECEIVED_TOKEN: ${{ github.event.client_payload.token }}
+        run: |
+          if [ "$RECEIVED_TOKEN" != "$EXPECTED_TOKEN" ]; then
+            echo "❌ Invalid dispatch token — aborting."
+            exit 1
+          fi
+          echo "✅ Dispatch token verified."
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
