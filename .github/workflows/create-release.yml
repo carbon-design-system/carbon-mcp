@@ -1,0 +1,63 @@
+name: Create Release
+
+on:
+  repository_dispatch:
+    types: [new-release]
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Verify dispatch token
+        env:
+          EXPECTED_TOKEN: ${{ secrets.CARBON_MCP_DISPATCH_TOKEN }}
+          RECEIVED_TOKEN: ${{ github.event.client_payload.token }}
+        run: |
+          if [ "$RECEIVED_TOKEN" != "$EXPECTED_TOKEN" ]; then
+            echo "❌ Invalid dispatch token — aborting."
+            exit 1
+          fi
+          echo "✅ Dispatch token verified."
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set version
+        id: version
+        run: |
+          VERSION="${{ github.event.client_payload.version }}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+
+      # ── Build the carbon-builder zip ──────────────────────────────────────
+      - name: Create carbon-builder zip
+        run: |
+          mkdir -p dist
+          zip -r dist/carbon-builder.zip public/skills/carbon-builder
+
+      # ── Tag and publish release with the approved notes from internal ──────
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create and push tag
+        run: |
+          git tag -a "${{ steps.version.outputs.tag }}" \
+            -m "Release ${{ steps.version.outputs.tag }}"
+          git push origin "${{ steps.version.outputs.tag }}"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Release ${{ steps.version.outputs.tag }}
+          body: ${{ github.event.client_payload.body }}
+          draft: false
+          prerelease: false
+          files: dist/carbon-builder.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
