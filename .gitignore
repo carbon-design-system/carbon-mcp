@@ -54,3 +54,4 @@ website-vite/public/videos/*.webm
 ############################################
 .tmp/
 tmp/
+/skill-eval/

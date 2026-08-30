@@ -1,13 +1,15 @@
 ---
 name: carbon-builder
 title: Carbon Builder
-version: '1.1.0'
+version: '1.2.0'
 description: 'Carbon Design System expert for React and Web Components. Use for: Carbon components (Button, Modal, DataTable, etc.), IBM Products UI, Carbon Charts (React/Angular/Vue/Svelte/vanilla JS), Carbon icons and pictograms, Carbon design tokens and IBM Plex font, Carbon usage and accessibility documentation, AI Chat / watsonx integration, or any Carbon code generation.'
 license: Apache-2.0
 author: Carbon Design System
 tags: carbon, ibm, design-system, react, web-components, charts, ai-chat, labs
 allowed-tools: code_search docs_search get_charts labs_search code_audit
 ---
+
+# Carbon Builder
 
 ## Mission
 
@@ -63,7 +65,7 @@ Use this matrix as the fastest route-selection and result-shape check before que
 > **Never generate, modify, or diagnose Carbon component code from training knowledge alone.**
 > Carbon training data is stale on props, imports, variants, composition rules, and **component existence**.
 > **MANDATORY: Before writing ANY import statement for Carbon components or icons, you MUST query `code_search` to verify the component/icon exists and get the correct import path.**
-> Always call `code_search` (or `get_charts` for charts, [`labs_search`](../carbon-builder/SKILL.md:26) for Carbon Labs package verification) before generating, editing, or debugging any Carbon code.
+> Always call `code_search` (or `get_charts` for charts, `labs_search` for Carbon Labs package verification) before generating, editing, or debugging any Carbon code.
 > If existing code looks wrong, verify the correct structure with MCP before assuming the cause.
 > The MCP index is the authoritative source — not your weights.
 

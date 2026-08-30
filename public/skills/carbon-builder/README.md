@@ -15,6 +15,8 @@ UI code, and builds Carbon Charts across all supported frameworks.
                                    | protocol/rules   |        | code_search          |
                                    | + guardrails     |        | docs_search          |
                                    +------------------+        | get_charts           |
+                                                               | labs_search          |
+                                                               | code_audit           |
                                                                +----------------------+
 ```
 
@@ -25,7 +27,7 @@ UI code, and builds Carbon Charts across all supported frameworks.
 The skill is distributed as a single zip archive:
 
 ```
-carbon-builder-skill-v1.1.0.zip
+carbon-builder-skill-v1.2.0.zip
 └── carbon-builder/
     ├── SKILL.md
     ├── README.md
@@ -52,9 +54,14 @@ carbon-builder/
     ├── data-model.md                ← Full schema for code_search, docs_search & get_charts
     ├── framework-rules.md           ← React vs Web Components enforcement + IBM Plex rules
     ├── implementation-guardrails.md ← Stability, SSR, package, styling, and layout guardrails
+    ├── common-pitfalls.md           ← SCSS, CDN, Web Components, Labs & query-routing pitfalls
     ├── query-protocols.md           ← Query optimization strategy + special cases
     ├── ai-chat-protocols.md         ← AI Chat file completeness rule + query patterns
     ├── charts-protocols.md          ← Carbon Charts 2-call convention, assembly hints
+    ├── code-audit-protocols.md      ← code_audit params, response schema, severity/category
+    ├── accessibility-rules.md       ← WCAG 2.2 AA rules, Carbon a11y props, forms & focus
+    ├── grid-system.md               ← Carbon Grid variants, responsive spans, nested grids
+    ├── carbon-labs.md               ← Carbon Labs package / styling / theme verification
     ├── result-validation.md         ← Result reconciliation, complex queries, a11y protocol
     └── error-recovery.md            ← Error recovery, fallbacks, performance + QA checklist
 ```
@@ -64,13 +71,15 @@ carbon-builder/
 ## Prerequisites
 
 Before using this skill, configure the **carbon-mcp MCP server** in your agent. The skill
-relies on three tools the server exposes:
+relies on five tools the server exposes:
 
 | Tool          | Purpose                                                                   |
 | ------------- | ------------------------------------------------------------------------- |
 | `code_search` | Fetch component examples, variants, props, and AI Chat code               |
 | `docs_search` | Fetch design/accessibility documentation and AI Chat API docs             |
 | `get_charts`  | Fetch Carbon Charts source code, data/options schemas, and assembly hints |
+| `labs_search` | Fetch Carbon Labs package guidance and experimental component data         |
+| `code_audit`  | Validate Carbon code for compliance; returns categorized issues + fixes    |
 
 See the carbon-mcp server documentation for installation and configuration.
 
@@ -367,11 +376,16 @@ instruction file.
 | File                           | Contents                                                                                |
 | ------------------------------ | --------------------------------------------------------------------------------------- |
 | `data-model.md`                | Full schema for `code_search`, `docs_search`, and `get_charts` results                  |
-| `framework-rules.md`           | React/Web Components enforcement + IBM Plex font rules                                  |
+| `framework-rules.md`           | React/Web Components enforcement + IBM Plex font rules                                   |
 | `implementation-guardrails.md` | Stability policy, AI Chat SSR safety, package/style requirements, API/layout guardrails |
+| `common-pitfalls.md`           | SCSS, CDN, Web Components styling, Labs setup, and query-routing pitfalls                |
 | `query-protocols.md`           | Full Discover→Canonicalize→Target strategy + special cases                              |
-| `ai-chat-protocols.md`         | AI Chat file completeness rule + query patterns                                         |
+| `ai-chat-protocols.md`         | AI Chat file completeness rule + query patterns                                          |
 | `charts-protocols.md`          | Carbon Charts 2-call convention, assembly hints, buildability, error recovery           |
+| `code-audit-protocols.md`      | `code_audit` parameters, response schema, category/severity table, batch mode           |
+| `accessibility-rules.md`       | WCAG 2.2 AA rules, required Carbon a11y props, forms, focus, ARIA                        |
+| `grid-system.md`               | Carbon Grid variants, responsive spans, nested grids, spacing rules                     |
+| `carbon-labs.md`               | Carbon Labs package verification, styling, and theme attributes                         |
 | `result-validation.md`         | Result reconciliation, complex queries, a11y retrieval protocol                         |
 | `error-recovery.md`            | Error recovery, fallbacks, performance, QA checklist                                    |
 
