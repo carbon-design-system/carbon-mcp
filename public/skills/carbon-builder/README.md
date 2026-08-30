@@ -376,14 +376,14 @@ instruction file.
 | File                           | Contents                                                                                |
 | ------------------------------ | --------------------------------------------------------------------------------------- |
 | `data-model.md`                | Full schema for `code_search`, `docs_search`, and `get_charts` results                  |
-| `framework-rules.md`           | React/Web Components enforcement + IBM Plex font rules                                   |
+| `framework-rules.md`           | React/Web Components enforcement + IBM Plex font rules                                  |
 | `implementation-guardrails.md` | Stability policy, AI Chat SSR safety, package/style requirements, API/layout guardrails |
-| `common-pitfalls.md`           | SCSS, CDN, Web Components styling, Labs setup, and query-routing pitfalls                |
+| `common-pitfalls.md`           | SCSS, CDN, Web Components styling, Labs setup, and query-routing pitfalls               |
 | `query-protocols.md`           | Full Discover→Canonicalize→Target strategy + special cases                              |
-| `ai-chat-protocols.md`         | AI Chat file completeness rule + query patterns                                          |
+| `ai-chat-protocols.md`         | AI Chat file completeness rule + query patterns                                         |
 | `charts-protocols.md`          | Carbon Charts 2-call convention, assembly hints, buildability, error recovery           |
 | `code-audit-protocols.md`      | `code_audit` parameters, response schema, category/severity table, batch mode           |
-| `accessibility-rules.md`       | WCAG 2.2 AA rules, required Carbon a11y props, forms, focus, ARIA                        |
+| `accessibility-rules.md`       | WCAG 2.2 AA rules, required Carbon a11y props, forms, focus, ARIA                       |
 | `grid-system.md`               | Carbon Grid variants, responsive spans, nested grids, spacing rules                     |
 | `carbon-labs.md`               | Carbon Labs package verification, styling, and theme attributes                         |
 | `result-validation.md`         | Result reconciliation, complex queries, a11y retrieval protocol                         |
