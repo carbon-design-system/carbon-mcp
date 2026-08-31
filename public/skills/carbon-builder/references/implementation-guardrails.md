@@ -191,7 +191,7 @@ Before finalizing a Web Components implementation:
 
 ## 8. Layout and Accessibility Guardrails
 
-- Use separate Grid containers for distinct logical content groups; specify responsive spans (`sm`/`md`/`lg`) for all layout columns. See [references/grid-system.md](references/grid-system.md) for variants, vertical spacing, nested grids, and column span calculation.
+- Use separate Grid containers for distinct logical content groups; specify responsive spans (`sm`/`md`/`lg`) for all layout columns. See [grid-system.md](grid-system.md) for variants, vertical spacing, nested grids, and column span calculation.
 - Keep overlay/floating UI (modals, side panels, tooltips, toasts) out of normal page Grid flow.
 - Breadcrumb current item must use `isCurrentPage` and must not include `href`.
 - Icon-only interactive controls must include descriptive `iconDescription`.
@@ -225,7 +225,7 @@ Apply this section when the user provides images or visual references for UI imp
 - Include these sections in analysis output:
   - Component Inventory
   - Typography Analysis
-  - Grid Analysis — see [references/grid-system.md](references/grid-system.md) for variant selection, column span calculation, and logical content group rules
+  - Grid Analysis — see [grid-system.md](grid-system.md) for variant selection, column span calculation, and logical content group rules
   - Spacing Analysis
 - Use separate Grid containers for logical content groups that should wrap together.
 - Pause after presenting analysis and get user confirmation before implementation.
