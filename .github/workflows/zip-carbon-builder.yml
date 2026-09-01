@@ -18,7 +18,8 @@ jobs:
       - name: Create zip archive
         run: |
           mkdir -p dist
-          zip -r dist/carbon-builder.zip public/skills/carbon-builder
+          cd public/skills
+          zip -r ../../dist/carbon-builder.zip carbon-builder
 
       - name: Upload zip artifact
         uses: actions/upload-artifact@v4
