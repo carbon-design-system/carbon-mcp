@@ -120,9 +120,11 @@ When the user asks to **audit, check, validate, or review** Carbon code for comp
 
 1. Call `code_audit` with the code and any known `framework` / `ibmProducts` context
 2. Parse the compact JSON response — it is always returned as a string
-3. Report issues grouped by severity (`e` = error, `w` = warning, `i` = info) and category;
+3. Report issues grouped by `cat` and severity (`e` = error, `w` = warning, `i` = info);
    use each issue's `name` field (e.g. "No raw hex colors") when describing it — **never surface the `rule` ID** to the user
-4. For issues with `autoFix` present, include the `orig` → `repl` replacement in your response
+4. For issues with `autoFix` present, include the `orig` → `repl` replacement in your response.
+   **Typography token issues (`font-size`, `font-weight`, `line-height`) never carry `autoFix`** —
+   use the `fix` field guidance (mixin or utility class) instead; do not attempt to construct a replacement
 5. If the result has `valid: true` and `total: 0` — confirm the code is clean
 6. **Do not** call `code_search` or `docs_search` before `code_audit` — the tool self-fetches
    Carbon context when `includeContext: true`; query the other tools only if deeper guidance
@@ -222,8 +224,8 @@ See [references/grid-system.md](references/grid-system.md) → **Always read whe
 | AI Chat docs    | `chunk_summary` (prefer over `chunk_text`), `api_symbols_text[]`, `titleline`, `anchor_url`                                                                                                                 |
 | `get_charts`    | `tool_policy` (follow `instruction`), `chart`, `chosen_variant`, `available_variants[]`, `source_files[]`, `assembly`, `buildable`                                                                          |
 | `labs_search`   | `component_name`, `package_name`, `framework`, `variants[]`, `props[]`, `install_command`, `import_hint`, `usage_hint`                                                                                      |
-| `code_audit`    | `valid`, `total`, `sev` (`e`/`w`/`i` counts), `cat` (counts by category), `issues[]`, `ctx`, `took_ms`, `validation_confidence`                                                                             |
-| audit issue     | `rule` (internal ID — do not show users), `name` (plain-English label — show this), `sev` (`e`/`w`/`i`), `msg`, `fix` (suggestion), `line`, `col`, `ctx`, `comp`, `token`, `cat`, `autoFix` (`orig`/`repl`) |
+| `code_audit`    | `valid`, `total`, `sev` (`e`/`w`/`i` counts), `cat` (counts by category), `issues[]`, `ctx`, `took_ms`, `validation_confidence`                                                                                                    |
+| audit issue     | `rule` (internal ID — do not show users), `name` (plain-English label — show this), `sev` (`e`/`w`/`i`), `msg`, `cat` (**always present** — category stamped by rule engine), `fix` (when available), `line`, `col`, `ctx`, `comp` (when component identified), `token`, `autoFix` (`orig`/`repl`, absent for typography token issues) |
 
 See [references/data-model.md](references/data-model.md) for full schema detail. → **Only read when** the Quick Reference table is insufficient — unexpected field shape or schema validation needed.
 

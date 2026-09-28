@@ -138,13 +138,13 @@ the user asks to audit, check, validate, or review Carbon code for compliance.
 | `name`    | string | ✓              | Plain-English rule label (e.g. `"No raw hex colors"`) — **use this when presenting issues to users**                                                                             |
 | `sev`     | string | ✓              | `"e"` error, `"w"` warning, `"i"` info                                                                                                                                           |
 | `msg`     | string | ✓              | Compressed human-readable issue message                                                                                                                                          |
+| `cat`     | string | ✓              | Category stamped by the rule engine: `tokens`, `components`, `accessibility`, `layout`, `advanced`, `documentation`                                                              |
 | `fix`     | string | when available | Compressed fix suggestion                                                                                                                                                        |
 | `line`    | number | when > 0       | 1-based line number in the submitted code                                                                                                                                        |
 | `col`     | number | when > 0       | 1-based column number                                                                                                                                                            |
 | `ctx`     | string | when available | Short code snippet around the issue (max 60 chars)                                                                                                                               |
-| `comp`    | string | when available | Carbon component name associated with the issue                                                                                                                                  |
+| `comp`    | string | when available | Carbon component name associated with the issue (set when a component is identified)                                                                                             |
 | `token`   | string | when available | Design token or raw value that triggered the issue                                                                                                                               |
-| `cat`     | string | when available | Category: `tokens`, `components`, `accessibility`, `layout`, `advanced`                                                                                                          |
 | `autoFix` | object | when fixable   | `{ orig, repl, scssImports? }` — exact text replacement. `scssImports` lists any `@use` statements that must be present at the top of the SCSS file for the replacement to work. |
 
 ---
@@ -261,6 +261,21 @@ The rules reflect this:
 If the project has a manual `:root` bridge (e.g. `--cds-spacing-05: #{spacing.$spacing-05}`) the
 `var()` form would work, but the tool cannot detect that bridge so it always guides to a CSS class
 for safety.
+
+### Typography tokens in SCSS/CSS (never `autoFix`)
+
+Typography token issues **never carry `autoFix`** regardless of context (inline style, SCSS, or CSS).
+This is because Carbon typography tokens are Sass maps (`$body-01`, `$heading-03`, etc.), not scalar
+values — they cannot be used directly in CSS properties and will cause compiler errors.
+
+| Context   | What the tool emits                                                                                       |
+| --------- | --------------------------------------------------------------------------------------------------------- |
+| SCSS/Sass | `fix` instructs using `@include type.type-style('body-01')` with `@use '@carbon/react/scss/type' as type;` |
+| CSS       | `fix` instructs applying the `cds--body-01` utility class directly on the element                         |
+| JSX       | `fix` instructs moving to a CSS class using the type-style mixin or `cds--` utility classes               |
+
+Do not attempt to construct a token replacement for font-size, font-weight, or line-height issues.
+The `fix` field provides the correct guidance in all cases.
 
 ---
 

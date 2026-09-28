@@ -1,7 +1,7 @@
 # Data Model & Schema Reference
 
 > All schemas are verified against live MCP responses and server source code
-> (`codeSearchTransform.js`, `responseBudget.js`, `indexConfig.js`).
+> (`codeSearchTransform.js`, `responseBudget.js`, `indexConfig.js`, `codeAuditService.js`).
 
 ---
 
