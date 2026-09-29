@@ -24,6 +24,8 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set version
         id: version
@@ -31,6 +33,25 @@ jobs:
           VERSION="${{ github.event.client_payload.version }}"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+
+      # ── Bump version in SKILL.md (only if skill files changed) ───────────
+      - name: Bump carbon-builder skill version
+        run: |
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          if [ -z "$LAST_TAG" ]; then
+            CHANGED=true
+          else
+            CHANGED=$(git diff --quiet "$LAST_TAG"..HEAD -- public/skills/carbon-builder/ \
+              && echo false || echo true)
+          fi
+
+          if [ "$CHANGED" = "true" ]; then
+            echo "✅ Skill files changed since $LAST_TAG — bumping version."
+            sed -i "s/^version: '.*'/version: '${{ steps.version.outputs.version }}'/" \
+              public/skills/carbon-builder/SKILL.md
+          else
+            echo "⏭️ No skill file changes since $LAST_TAG — skipping version bump."
+          fi
 
       # ── Build the carbon-builder zip ──────────────────────────────────────
       - name: Create carbon-builder zip
