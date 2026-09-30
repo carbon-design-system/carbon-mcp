@@ -7,7 +7,7 @@
 - [Overview](https://carbondesignsystem.com/): Introduction to Carbon Design System
 - [All Systems](https://carbondesignsystem.com/all-systems/): Overview of all IBM design systems
 - [Designing](https://carbondesignsystem.com/designing/get-started/): Getting started for designers
-- [Developing](https://carbondesignsystem.com/developing/get-started/): Getting started for developers
+- [Developing](https://carbondesignsystem.com/getting-started/get-started/): Getting started for developers
 
 ## Foundations
 
@@ -106,10 +106,10 @@
 
 ## Frameworks
 
-- [React (@carbon/react)](https://carbondesignsystem.com/developing/frameworks/react/): React implementation
-- [Web Components (@carbon/web-components)](https://carbondesignsystem.com/developing/frameworks/web-components/): Web Components implementation
-- [Angular](https://angular.carbondesignsystem.com/documentation/): Angular implementation
-- [Vue](https://carbondesignsystem.com/developing/frameworks/vue/): Community Vue implementation
+- [React (@carbon/react)](https://carbondesignsystem.com/getting-started/frameworks/react/): React implementation
+- [Web Components (@carbon/web-components)](https://carbondesignsystem.com/getting-started/frameworks/web-components/): Web Components implementation
+- [Angular](https://carbondesignsystem.com/getting-started/developing/carbon-core/community): Angular implementation
+- [Vue](https://carbondesignsystem.com/getting-started/developing/carbon-core/community): Community Vue implementation
 
 ## Source Code — carbon-design-system/carbon
 

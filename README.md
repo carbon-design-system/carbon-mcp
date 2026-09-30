@@ -4,9 +4,11 @@ This repository serves as the central place to report issues and request new fea
 
 Visit the Carbon MCP website to get started: 
 
-- [Overview](https://carbondesignsystem.com/developing/carbon-mcp/overview/): MCP overview, Carbon MCP tools and content coverage
-- [Onboarding and setup](https://carbondesignsystem.com/developing/carbon-mcp/onboarding-and-setup/): Getting authentication credentials and connecting to common MCP clients
-- [Prompts](https://carbondesignsystem.com/developing/carbon-mcp/prompts/): Prompting guidance and examples
+- [Overview](https://www.carbondesignsystem.com/getting-started/carbon-mcp/overview): Carbon MCP overview and key benefits
+- [Concepts](https://www.carbondesignsystem.com/getting-started/carbon-mcp/concepts): Details on the Carbon MCP tools and content coverage
+- [Onboarding and setup](https://www.carbondesignsystem.com/getting-started/carbon-mcp/onboarding-and-setup): Getting authentication credentials and connecting to common MCP clients
+- [Prompts](https://www.carbondesignsystem.com/getting-started/carbon-mcp/prompts): Prompting guidance and best practices
+- [Token conservation](https://www.carbondesignsystem.com/getting-started/carbon-mcp/token-conservation): Keeps AI workflows fast and cost-efficient by reducing unnecessary context and responses without losing quality
 
 <br />
 <img
