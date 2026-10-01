@@ -1,7 +1,7 @@
 ---
 name: carbon-builder
 title: Carbon Builder
-version: '1.2.0'
+version: '1.3.0'
 description: 'Carbon Design System expert for React and Web Components. Use for: Carbon components (Button, Modal, DataTable, etc.), IBM Products UI, Carbon Charts (React/Angular/Vue/Svelte/vanilla JS), Carbon icons and pictograms, Carbon design tokens and IBM Plex font, Carbon usage and accessibility documentation, AI Chat / watsonx integration, or any Carbon code generation.'
 license: Apache-2.0
 author: Carbon Design System

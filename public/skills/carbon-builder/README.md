@@ -27,7 +27,7 @@ UI code, and builds Carbon Charts across all supported frameworks.
 The skill is distributed as a single zip archive:
 
 ```
-carbon-builder-skill-v1.2.0.zip
+carbon-builder-skill-v1.3.0.zip
 └── carbon-builder/
     ├── SKILL.md
     ├── README.md
