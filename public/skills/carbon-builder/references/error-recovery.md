@@ -12,7 +12,7 @@
 | `error: "chunks_not_found"` | Source code is not indexed. Run `mode: "schema"` to confirm the manifest exists and inspect `available_variants`. Report to user.                           |
 | `buildable: false`          | Inspect `incomplete.reason` and `incomplete.missing`. Suggest a different variant from `available_variants`. Do not call `code_search`.                     |
 | `variant_not_found: true`   | Server substituted the closest match. Inform the user which variant was used (`result.variant_note`).                                                       |
-| `recovery` object present   | Use cross-framework donor source files for data/options; keep requested-framework `import_hint`/`usage_hint`. Follow `assembly.instruction` exactly.        |
+| `recovery` object present   | Use cross-framework donor source files for data/options; keep requested-framework `import_hint`/`usage_hint`. Apply `assembly.instruction` as guidance.     |
 
 ---
 
@@ -285,9 +285,9 @@ Use this checklist before composing the final response:
 
 - [ ] `code_search` was NOT called for chart content — `get_charts` only
 - [ ] 2-call convention followed: `mode:"schema"` → `mode:"full"`
-- [ ] `tool_policy.instruction` in get_charts response followed
+- [ ] Chart retrieval rules restated in `tool_policy.instruction` respected
 - [ ] Assembly fields used verbatim: `install_command`, `styles_import`, `import_hint`, `usage_hint`
-- [ ] `assembly.install_command` executed and confirmed successful before completion
+- [ ] Dependencies installed via the validated `assembly.install_command` and confirmed successful before completion
 - [ ] Chart dependencies verified installed before applying/validating `styles_import`
 - [ ] `styles_import` placed as top-level app entry import — not in SCSS
 - [ ] Chart CSS import resolves after install (no module resolution errors)
