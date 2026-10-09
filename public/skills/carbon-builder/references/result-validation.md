@@ -40,7 +40,7 @@ After every `get_charts` response:
 
 4. **Verify `assembly` fields (mode:"full" only)** — confirm all four sub-fields are present
    before composing the response:
-   - `assembly.install_command` — copy verbatim; do not substitute an equivalent package manager command
+   - `assembly.install_command` — copy verbatim; do not substitute an equivalent package manager command (validate per the Carbon Charts Rule in SKILL.md before running)
    - `assembly.styles_import` — apply as top-level app entry import; never place in SCSS
    - `chosen_variant.import_hint` — apply verbatim for component imports
    - `chosen_variant.usage_hint` — apply verbatim for usage structure
@@ -64,7 +64,7 @@ After every `get_charts` response:
 8. **Validate returned `framework`** — a mismatch between the requested and returned framework
    means a fallback occurred; notify the user before proceeding
 
-9. **Install-before-import validation** — execute `assembly.install_command` and confirm
+9. **Install-before-import validation** — install dependencies via the validated `assembly.install_command` and confirm
    success before applying or validating `assembly.styles_import`
 
 ---

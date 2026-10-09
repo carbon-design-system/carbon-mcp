@@ -27,7 +27,7 @@ UI code, and builds Carbon Charts across all supported frameworks.
 The skill is distributed as a single zip archive:
 
 ```
-carbon-builder-skill-v1.3.0.zip
+carbon-builder-skill-v1.3.1.zip
 └── carbon-builder/
     ├── SKILL.md
     ├── README.md
@@ -118,6 +118,8 @@ demand. All other clients require the reference content to be manually inlined.
 ---
 
 ## Installation
+
+> These are manual setup steps for humans, not instructions for an agent during skill use.
 
 ### IBM Bob
 
