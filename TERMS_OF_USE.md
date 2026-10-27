@@ -1,6 +1,6 @@
 # Carbon MCP – Terms of Use
 
-_Last updated: January 2026_
+_Last updated: October 27, 2026_
 
 These Terms of Use (“Terms”) govern access to and use of the **IBM Cloud deployment of the Carbon MCP Server** (“Carbon MCP”, “the Service”). The Service is an IBM Cloud–hosted Model Context Protocol (MCP) environment for retrieving and analyzing content related to the IBM Carbon Design System.
 
@@ -23,6 +23,10 @@ You will **not**:
 - Reverse-engineer, decompile, or disassemble any part of Carbon MCP except as permitted by law.  
 - Use the Service in any way that could harm IBM, its clients, or third parties.
 
+### 1.1 Content you submit
+
+Your coding agent decides what to send to Carbon MCP based on your instructions. You are responsible for what you and your agent submit. Do not submit personal data, credentials or confidential information that the task does not need. Carbon MCP processes submitted content only to provide the requested result, as described in section 3. Your agent and its AI provider handle your code under their own terms, not these Terms.
+
 IBM reserves the right to suspend or terminate access to Carbon MCP for any violation of these Terms.
 
 ---
@@ -37,10 +41,29 @@ You agree to promptly notify the Carbon MCP administrators of any suspected secu
 
 ---
 
-## 3. Data Retention and Privacy
+## 3. Data handling and privacy
 
-Carbon MCP processes limited operational data solely to enable query execution, performance monitoring, and service auditing.  
-All processing is performed in accordance with [IBM Privacy Statement](https://www.ibm.com/privacy) and internal data-handling standards. No personally identifiable content from your queries or retrieved documents is stored beyond what is required for normal system operation or evaluation.
+**In short.** Your coding agent reads your code to complete the task you give it. When the agent calls Carbon MCP, it sends the code needed for that task, and Carbon MCP uses it only to return a result.
+
+### 3.1 How Carbon MCP uses the code you send
+
+A coding agent works by reading and changing your code to complete a task. When your agent calls a Carbon MCP tool such as `code_audit`, it sends the code that tool needs. Carbon MCP uses that code the same way: only to check it and return the result to your agent, in the same request. The code is processed in memory and is not written to disk, logs or any database. Results, which can include short excerpts of the code, are held in memory for up to one hour so a repeated request is faster, and are then discarded.
+
+### 3.2 Your identity
+
+You sign in with IBMid. Carbon MCP does not store your email address in its records. It derives an identifier from your email with a keyed hash (HMAC-SHA256) and uses that identifier for access, telemetry and the records described below. The identifier is pseudonymous: IBM can match it to your email when it needs to, for example to process an opt-out or a data request.
+
+### 3.3 Records of your acceptance
+
+When you agree to these Terms, Carbon MCP records your identifier, the version of the Terms, the date and time, and the client you connected with. IBM keeps these records as evidence of your agreement, including after you opt out of telemetry under section 4.2.
+
+### 3.4 Feedback contact
+
+If you choose to be contacted for feedback, Carbon MCP records that choice against your identifier. You can withdraw it at any time by writing to Carbon.MCP@ibm.com.
+
+### 3.5 Privacy statement
+
+All processing follows the [IBM Privacy Statement](https://www.ibm.com/privacy), which describes your rights and how to exercise them.
 
 ---
 
@@ -48,14 +71,16 @@ All processing is performed in accordance with [IBM Privacy Statement](https://w
 
 ### 4.1 What data gets collected
 
-When telemetry is enabled, Carbon MCP collects limited, de-identified and anonymized operational data to improve service reliability and relevance. Typical telemetry fields may include:
+When telemetry is enabled, Carbon MCP collects limited operational data linked to your pseudonymous identifier (section 3.2) to improve service reliability and relevance. Typical telemetry fields may include:
 
 - Timestamp and request type (e.g., `mcp_query`, `auth`, `error`)  
+- Your pseudonymous identifier and your email domain  
+- The client's user agent  
 - Query size, latency, and cache performance metrics  
 - Session identifiers (UUIDs) used for continuity and authentication  
 - Aggregate usage statistics (frequency, success rate, top components, etc.)
 
-Telemetry **does not include** plain-text emails, credentials, documents, or user content beyond the metadata required for metrics.
+Telemetry **does not include** plain-text emails, credentials, documents, the code you submit, or user content beyond the metadata required for metrics.
 
 ### 4.2 Opting out of IBM Telemetry data collection
 
