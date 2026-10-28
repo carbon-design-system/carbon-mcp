@@ -71,16 +71,17 @@ All processing follows the [IBM Privacy Statement](https://www.ibm.com/privacy),
 
 ### 4.1 What data gets collected
 
-When telemetry is enabled, Carbon MCP collects limited operational data linked to your pseudonymous identifier (section 3.2) to improve service reliability and relevance. Typical telemetry fields may include:
+When telemetry is enabled, Carbon MCP collects limited operational data linked to your pseudonymous identifier (section 3.2) to improve service reliability and relevance. Telemetry may include:
 
-- Timestamp and request type (e.g., `mcp_query`, `auth`, `error`)  
-- Your pseudonymous identifier and your email domain  
-- The client's user agent  
-- Query size, latency, and cache performance metrics  
-- Session identifiers (UUIDs) used for continuity and authentication  
-- Aggregate usage statistics (frequency, success rate, top components, etc.)
+- Timestamp and event type (search and tool requests, sign-in events, opt-out requests)  
+- Your pseudonymous identifier, your email domain and whether you are an IBM user  
+- The tool called and the search text sent to it, lowercased, with its filters, paging and sort options  
+- Result counts, the top score, query size, latency and cache performance  
+- Error messages from failed requests, shortened to 300 characters  
+- Sign-in details: the sign-in method, the token issuer and audience, the requested scope, and the name and settings your MCP client registered with  
+- Session identifiers (UUIDs) used for continuity and authentication
 
-Telemetry **does not include** plain-text emails, credentials, documents, the code you submit, or user content beyond the metadata required for metrics.
+Telemetry **does not include** plain-text emails, credentials, documents or the code you submit to tools such as `code_audit`. For `code_audit`, telemetry records the tool name, a result count, latency and cache status, not the code.
 
 ### 4.2 Opting out of IBM Telemetry data collection
 
