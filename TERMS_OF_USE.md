@@ -51,11 +51,11 @@ A coding agent works by reading and changing your code to complete a task. When 
 
 ### 3.2 Your identity
 
-You sign in with IBMid. Carbon MCP does not store your email address in its records. It derives an identifier from your email with a keyed hash (HMAC-SHA256) and uses that identifier for access, telemetry and the records described below. The identifier is pseudonymous: IBM can match it to your email when it needs to, for example to process an opt-out or a data request.
+You sign in with IBMid. Carbon MCP does not store your email address in plain text. It derives a pseudonymous identifier from your email with a keyed hash (HMAC-SHA256) and uses that identifier for access, telemetry and the records described below. It also keeps an encrypted copy of your email, separate from telemetry, so that IBM can match the identifier to you when it needs to, for example to investigate misuse or to process an opt-out or a data request. The encrypted copy is kept for seven years after your last sign-in.
 
 ### 3.3 Records of your acceptance
 
-When you agree to these Terms, Carbon MCP records your identifier, the version of the Terms, the date and time, and the client you connected with. IBM keeps these records as evidence of your agreement, including after you opt out of telemetry under section 4.2.
+When you agree to these Terms, Carbon MCP records your identifier, the version of the Terms, the date and time, and the client you connected with. IBM keeps these records as evidence of your agreement, including after you opt out of telemetry under section 4.2. IBM keeps each acceptance record for seven years from the date it was recorded, and then deletes it.
 
 ### 3.4 Feedback contact
 
@@ -95,6 +95,7 @@ Once processed:
 - A durable { "kind": "opt_out" } marker is recorded to prevent future telemetry writes.
 - No further usage events (queries, auth, or performance metrics) will be logged for your identity.
 - To re-enable telemetry, contact the Carbon MCP administrator or request reinstatement via the MCP management interface.
+- Your acceptance record (section 3.3) and the encrypted copy of your email (section 3.2) are not telemetry and are kept.
 
 ---
 
@@ -121,6 +122,6 @@ To the maximum extent permitted by law, IBM shall not be liable for any indirect
 ## 8. Modifications
 
 IBM may update these Terms periodically to reflect changes in policy or functionality.
-Updated Terms will be posted in this repository. Your continued use of the Service after updates constitutes acceptance of the revised Terms.
+Updated Terms will be posted in this repository. The link from Carbon MCP always opens the latest version. Each version carries its "Last updated" date at the top, and earlier versions remain available in this repository's history. Your continued use of the Service after updates constitutes acceptance of the revised Terms.
 
 © IBM Corporation 2026. All rights reserved.
