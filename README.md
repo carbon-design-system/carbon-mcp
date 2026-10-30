@@ -48,9 +48,7 @@ Clients that read an `mcp.json` file use this minimal configuration:
   "mcpServers": {
     "carbon-mcp": {
       "type": "streamable-http",
-      "url": "https://mcp.carbondesignsystem.com/mcp",
-      "oauth": true,
-      "alwaysAllow": []
+      "url": "https://mcp.carbondesignsystem.com/mcp"
     }
   }
 }
